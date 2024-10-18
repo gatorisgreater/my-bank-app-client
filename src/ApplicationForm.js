@@ -71,7 +71,7 @@ const ApplicationForm = () => {
           setMessage('Unexpected outcome. Please try again.');
       }
     } catch (err) {
-    console.log("error: ", err)
+      console.log("error: ", err)
       setError('There was an error submitting your application. Please try again later.');
     }
   };
@@ -131,8 +131,6 @@ const ApplicationForm = () => {
             </div>
           </div><button type="submit" className="submit-button">Submit</button></>
 )}
-    
-
   </form>
 </div>
   );
