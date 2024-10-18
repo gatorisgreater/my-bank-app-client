@@ -77,72 +77,64 @@ const ApplicationForm = () => {
   };
 
   return (
-    <div>
-      <h1>BaaS Pro Shops <br></br>Debit Card Application Form</h1>
-      <form onSubmit={handleSubmit}>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        {message && <p style={{ color: 'green' }}>{message}</p>}
-        
-        {!isSubmitted && (
-          
-        <><><table style={{ width: '50%', margin: '20px auto', borderCollapse: 'collapse', border: '1px solid #ccc' }}>
-        <thead>
-          <tr>
-            <th style={{ border: '1px solid #ccc' }}></th>
-            <th style={{ border: '1px solid #ccc' }}></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ border: '1px solid #ccc' }}><label htmlFor="firstName">First Name:</label></td>
-            <td style={{ border: '1px solid #ccc' }}><input type="text" name="firstName" placeholder="First Name" onChange={handleChange} required /></td>
-        </tr>
-        <tr>
-          <td style={{ border: '1px solid #ccc' }}><label htmlFor="lastName">Last Name:</label></td>
-          <td style={{ border: '1px solid #ccc' }}><input type="text" name="lastName" placeholder="Last Name" onChange={handleChange} required /></td>
-        </tr>
-        <tr>
-          <td style={{ border: '1px solid #ccc' }}><label htmlFor="addressLine1">Address Line 1:</label></td>
-          <td style={{ border: '1px solid #ccc' }}><input type="text" name="addressLine1" placeholder="Address Line 1" onChange={handleChange} required /></td>
-        </tr>
-        <tr>
-        <td style={{ border: '1px solid #ccc' }}><label htmlFor="addressLine2">Address Line 2:</label></td>
-        <td style={{ border: '1px solid #ccc' }}><input type="text" name="addressLine2" placeholder="Address Line 2" onChange={handleChange} /></td>
-        </tr>
-        <tr>
-        <td style={{ border: '1px solid #ccc' }}><label htmlFor="city">City:</label></td>  
-        <td style={{ border: '1px solid #ccc' }}><input type="text" name="city" placeholder="City" onChange={handleChange} required /></td>
-        </tr>
-        <tr>
-        <td style={{ border: '1px solid #ccc' }}><label htmlFor="state">State:</label></td>            
-        <td style={{ border: '1px solid #ccc' }}><input type="text" name="state" placeholder="State (e.g., NY)" onChange={handleChange} required /></td>
-        </tr>
-        <tr>
-        <td style={{ border: '1px solid #ccc' }}><label htmlFor="zip">Zip:</label></td>     
-        <td style={{ border: '1px solid #ccc' }}><input type="text" name="zip" placeholder="Zip/Postal Code" onChange={handleChange} required /></td>
-        </tr>
-        <tr>
-        <td style={{ border: '1px solid #ccc' }}><label htmlFor="country">State:</label></td>     
-        <td style={{ border: '1px solid #ccc' }}><input type="text" name="country" placeholder="Country" value="US" readOnly /></td>
-        </tr>
-        <tr>
-        <td style={{ border: '1px solid #ccc' }}><label htmlFor="ssn">SSN:</label></td>       
-        <td style={{ border: '1px solid #ccc' }}><input type="text" name="ssn" placeholder="SSN (9 digits)" onChange={handleChange} required /></td>
-        </tr>
-        <tr>
-        <td style={{ border: '1px solid #ccc' }}><label htmlFor="email">Email:</label></td>     
-        <td style={{ border: '1px solid #ccc' }}><input type="email" name="email" placeholder="Email Address" onChange={handleChange} required /></td>
-        </tr>
-        <tr>
-        <td style={{ border: '1px solid #ccc' }}><label htmlFor="dob">Date of Birth:</label></td>     
-        <td style={{ border: '1px solid #ccc' }}><input type="text" name="dob" placeholder="Date of Birth (YYYY-MM-DD)" onChange={handleChange} required /></td>
-        </tr>
-        </tbody></table>
-        </><button type="submit">Submit</button></>
-        )}
-        
-      </form>
-    </div>
+<div className="app-container">
+  <h1 className="form-title">BaaS Pro Shops <br />Debit Card Application Form</h1>
+  <form onSubmit={handleSubmit} className="form">
+    {error && <p className="error-message">{error}</p>}
+    {message && <p className="success-message">{message}</p>}
+    
+    {!isSubmitted && (
+      <><div className="form-grid">
+            <div className="form-row">
+              <label htmlFor="firstName">First Name:</label>
+              <input type="text" name="firstName" placeholder="First Name" onChange={handleChange} required />
+            </div>
+            <div className="form-row">
+              <label htmlFor="lastName">Last Name:</label>
+              <input type="text" name="lastName" placeholder="Last Name" onChange={handleChange} required />
+            </div>
+            <div className="form-row">
+              <label htmlFor="addressLine1">Address Line 1:</label>
+              <input type="text" name="addressLine1" placeholder="Address Line 1" onChange={handleChange} required />
+            </div>
+            <div className="form-row">
+              <label htmlFor="addressLine2">Address Line 2:</label>
+              <input type="text" name="addressLine2" placeholder="Address Line 2" onChange={handleChange} />
+            </div>
+            <div className="form-row">
+              <label htmlFor="city">City:</label>
+              <input type="text" name="city" placeholder="City" onChange={handleChange} required />
+            </div>
+            <div className="form-row">
+              <label htmlFor="state">State:</label>
+              <input type="text" name="state" placeholder="State (e.g., NY)" onChange={handleChange} required />
+            </div>
+            <div className="form-row">
+              <label htmlFor="zip">Zip:</label>
+              <input type="text" name="zip" placeholder="Zip/Postal Code" onChange={handleChange} required />
+            </div>
+            <div className="form-row">
+              <label htmlFor="country">Country:</label>
+              <input type="text" name="country" placeholder="Country" value="US" readOnly />
+            </div>
+            <div className="form-row">
+              <label htmlFor="ssn">SSN:</label>
+              <input type="text" name="ssn" placeholder="SSN (9 digits)" onChange={handleChange} required />
+            </div>
+            <div className="form-row">
+              <label htmlFor="email">Email:</label>
+              <input type="email" name="email" placeholder="Email Address" onChange={handleChange} required />
+            </div>
+            <div className="form-row">
+              <label htmlFor="dob">Date of Birth:</label>
+              <input type="text" name="dob" placeholder="Date of Birth (YYYY-MM-DD)" onChange={handleChange} required />
+            </div>
+          </div><button type="submit" className="submit-button">Submit</button></>
+)}
+    
+
+  </form>
+</div>
   );
 };
 
